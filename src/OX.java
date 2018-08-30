@@ -1,10 +1,12 @@
 public class OX {
     String table[][] = {
+
             {" ","0","1","2"},
             {"0","-","-","-"},
             {"1","-","-","-"},
             {"2","-","-","-"},
     };
+
     private String currentPlayer;
     private int turnCount;
     private int scoreX;
