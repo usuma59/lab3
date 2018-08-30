@@ -44,6 +44,7 @@ class OXTest {
         assertEquals("X",ox.getCurrentPlayer());
 
     }
+    // แนวตั้ง
     @Test
     public void checkWin1() {
         OX ox = new OX();
@@ -54,6 +55,28 @@ class OXTest {
         assertTrue( ox.checkWin(0,0));
         assertTrue( ox.checkWin(0,1));
         assertTrue( ox.checkWin(0,2));
+    }
+    @Test
+    public void checkWin11() {
+        OX ox = new OX();
+        ox.put(1,0);
+        ox.put(1,1);
+        ox.put(1,2);
+        assertEquals(" 012\n0-X-\n1-X-\n2-X-\n",ox.getTableString());
+        assertTrue( ox.checkWin(1,0));
+        assertTrue( ox.checkWin(1,1));
+        assertTrue( ox.checkWin(1,2));
+    }
+    @Test
+    public void checkWin12() {
+        OX ox = new OX();
+        ox.put(2,0);
+        ox.put(2,1);
+        ox.put(2,2);
+        assertEquals(" 012\n0--X\n1--X\n2--X\n",ox.getTableString());
+        assertTrue( ox.checkWin(2,0));
+        assertTrue( ox.checkWin(2,1));
+        assertTrue( ox.checkWin(2,2));
     }
     @Test
     public void checkWin2() {
@@ -69,6 +92,17 @@ class OXTest {
     @Test
     public void checkWin3() {
         OX ox = new OX();
+        ox.put(0,0);
+        ox.put(1,0);
+        ox.put(2,0);
+        assertEquals(" 012\n0XXX\n1---\n2---\n",ox.getTableString());
+        assertTrue(ox.checkWin(0,0));
+        assertTrue(ox.checkWin(1,0));
+        assertTrue(ox.checkWin(2,0));
+    }
+    @Test
+    public void checkWin4() {
+        OX ox = new OX();
         ox.put(1,0);
         ox.put(1,1);
         ox.put(1,2);
@@ -78,7 +112,7 @@ class OXTest {
         assertTrue(ox.checkWin(1,2));
     }
     @Test
-    public void checkWin4() {
+    public void checkWin5() {
         OX ox = new OX();
         ox.put(2,0);
         ox.put(2,1);
@@ -86,6 +120,28 @@ class OXTest {
         assertEquals(" 012\n0--X\n1--X\n2--X\n",ox.getTableString());
         assertTrue(ox.checkWin(2,0));
         assertTrue(ox.checkWin(2,1));
+        assertTrue(ox.checkWin(2,2));
+    }
+    @Test
+    public void checkWin6() {
+        OX ox = new OX();
+        ox.put(2,0);
+        ox.put(1,1);
+        ox.put(0,2);
+        assertEquals(" 012\n0--X\n1-X-\n2X--\n",ox.getTableString());
+        assertTrue(ox.checkWin(2,0));
+        assertTrue(ox.checkWin(1,1));
+        assertTrue(ox.checkWin(0,2));
+    }
+    @Test
+    public void checkWin7() {
+        OX ox = new OX();
+        ox.put(0,0);
+        ox.put(1,1);
+        ox.put(2,2);
+        assertEquals(" 012\n0X--\n1-X-\n2--X\n",ox.getTableString());
+        assertTrue(ox.checkWin(0,0));
+        assertTrue(ox.checkWin(1,1));
         assertTrue(ox.checkWin(2,2));
     }
 }
