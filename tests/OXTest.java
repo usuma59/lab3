@@ -38,6 +38,7 @@ class OXTest {
     @Test
     void putAt0_0Twice() {
         OX ox = new OX();
+
         assertTrue(ox.put(0, 0));
         assertFalse(ox.put(0, 0));
     }
@@ -45,6 +46,7 @@ class OXTest {
     @Test
     void putOverTable() {
         OX ox = new OX();
+
         assertFalse(ox.put(0, -1));
         assertFalse(ox.put(0, 3));
         assertFalse(ox.put(3, -1));
@@ -65,6 +67,7 @@ class OXTest {
     @Test
     void getOver() {
         OX ox = new OX();
+
         assertNull(ox.get(0, -1));
         assertNull(ox.get(0, 3));
         assertNull(ox.get(3, -1));
@@ -77,6 +80,7 @@ class OXTest {
         ox.put(0,0);
         ox.put(0,1);
         ox.put(0,2);
+
         assertTrue(ox.checkWin(0,0));
         assertTrue(ox.checkWin(0,1));
         assertTrue(ox.checkWin(0,2));
@@ -91,6 +95,7 @@ class OXTest {
         ox.put(2,0);
         ox.put(2,1);
         ox.put(2,2);
+
         assertTrue(ox.checkWin(2,0));
         assertTrue(ox.checkWin(2,1));
         assertTrue(ox.checkWin(2,2));
